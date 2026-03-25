@@ -4,7 +4,7 @@ authors = [
     { name = "simon ", email = "simomutu8@gmail.com"}
 ]
 description = "airplane_mode"
-requires-python = ">=3.14"
+requires-python = ">=3.11"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
