@@ -1,0 +1,15 @@
+{
+ "app": "airplane_mode",
+ "creation": "2026-03-25 02:23:16.384716",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "hand",
+ "idx": 0,
+ "items": [],
+ "modified": "2026-03-25 02:23:22.769504",
+ "modified_by": "Administrator",
+ "name": "Airplane Mode",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Airplane Mode"
+}
