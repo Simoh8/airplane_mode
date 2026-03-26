@@ -9,9 +9,10 @@
  "field_order": [
   "flight_passenger_details_section",
   "first_name",
-  "date_of_birth",
+  "full_name",
   "column_break_lhdd",
-  "last_name"
+  "last_name",
+  "date_of_birth"
  ],
  "fields": [
   {
@@ -40,6 +41,12 @@
    "fieldname": "last_name",
    "fieldtype": "Data",
    "label": "Last Name"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
@@ -50,7 +57,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2026-03-25 02:10:47.615707",
+ "modified": "2026-03-26 00:22:37.011418",
  "modified_by": "Administrator",
  "module": "airplane_mode",
  "name": "Flight Passenger",
@@ -76,5 +83,5 @@
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],
- "title_field": "first_name"
+ "title_field": "full_name"
 }

@@ -8,17 +8,25 @@
  "field_order": [
   "section_break_gqdi",
   "passenger",
-  "flight",
-  "duration_of_flight",
+  "seat",
   "column_break_ddyr",
-  "source_airport",
-  "destination_airport",
+  "flight",
+  "status",
+  "section_break_gnji",
+  "source_airport_code",
+  "column_break_mfee",
+  "destination_airport_code",
+  "flight_add_ons_details_section",
+  "add_ons",
+  "section_break_rljz",
+  "flight_price",
+  "column_break_ejbn",
+  "total_amount",
   "flight_information_section",
   "departure_time",
-  "source_airport_code",
+  "duration_of_flight",
   "column_break_pywm",
   "departure_date",
-  "destination_airport_code",
   "amended_from"
  ],
  "fields": [
@@ -47,65 +55,36 @@
    "reqd": 1
   },
   {
-   "fieldname": "source_airport",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Source Airport",
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
-   "fieldname": "destination_airport",
-   "fieldtype": "Link",
-   "label": "Destination Airport",
-   "options": "Airport",
-   "reqd": 1
-  },
-  {
    "fieldname": "flight",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Flight",
-   "options": "Airplane",
+   "options": "Airplane Flight",
    "reqd": 1
   },
   {
+   "fetch_from": "flight.duration",
    "fieldname": "duration_of_flight",
    "fieldtype": "Duration",
-   "label": "Duration of Flight"
+   "label": "Duration of Flight",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ddyr",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "flight.time_of_departure",
    "fieldname": "departure_time",
    "fieldtype": "Time",
    "label": "Departure Time"
   },
   {
+   "fetch_from": "flight.date_of_departure",
    "fieldname": "departure_date",
    "fieldtype": "Date",
    "in_standard_filter": 1,
    "label": "Departure Date"
-  },
-  {
-   "fetch_from": "source_airport.code",
-   "fieldname": "source_airport_code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Source Airport Code",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fetch_from": "destination_airport.code",
-   "fieldname": "destination_airport_code",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Destination Airport Code",
-   "read_only": 1,
-   "reqd": 1
   },
   {
    "bold": 1,
@@ -116,13 +95,77 @@
   {
    "fieldname": "column_break_pywm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nBooked\nChecked-In\nBoarded\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "flight_add_ons_details_section",
+   "fieldtype": "Section Break",
+   "label": "Flight Add ons Details"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rljz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ejbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gnji",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "flight.source_airport_code",
+   "fieldname": "source_airport_code",
+   "fieldtype": "Data",
+   "label": "Source Airport Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mfee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "flight.destination_airport_code",
+   "fieldname": "destination_airport_code",
+   "fieldtype": "Data",
+   "label": "Destination Airport Code",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-25 01:58:10.170332",
+ "modified": "2026-03-27 01:24:17.832916",
  "modified_by": "Administrator",
  "module": "airplane_mode",
  "name": "Airplane Ticket",
@@ -147,6 +190,31 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Draft"
+  },
+  {
+   "color": "Blue",
+   "title": "Booked"
+  },
+  {
+   "color": "Yellow",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Purple",
+   "title": "Boarded"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
  "track_changes": 1
 }

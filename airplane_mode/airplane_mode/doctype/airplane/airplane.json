@@ -11,8 +11,7 @@
   "model",
   "airline",
   "column_break_afza",
-  "capacity",
-  "status"
+  "capacity"
  ],
  "fields": [
   {
@@ -46,18 +45,12 @@
    "label": "Capacity",
    "non_negative": 1,
    "reqd": 1
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Booked\nChecked-In\nBoarded"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-25 02:07:07.101326",
+ "modified": "2026-03-25 22:02:26.671656",
  "modified_by": "Administrator",
  "module": "airplane_mode",
  "name": "Airplane",

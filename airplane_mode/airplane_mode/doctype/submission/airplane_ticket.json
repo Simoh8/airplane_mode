@@ -13,6 +13,7 @@
   "column_break_ddyr",
   "source_airport",
   "destination_airport",
+  "status",
   "flight_information_section",
   "departure_time",
   "source_airport_code",
@@ -116,13 +117,19 @@
   {
    "fieldname": "column_break_pywm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nBooked\nChecked-In\nBoarded\nCompleted\nCancelled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-25 01:58:10.170332",
+ "modified": "2026-03-25 22:01:09.723087",
  "modified_by": "Administrator",
  "module": "airplane_mode",
  "name": "Airplane Ticket",
@@ -147,6 +154,31 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Draft"
+  },
+  {
+   "color": "Blue",
+   "title": "Booked"
+  },
+  {
+   "color": "Yellow",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Purple",
+   "title": "Boarded"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ],
  "track_changes": 1
 }
