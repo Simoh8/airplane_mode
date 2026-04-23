@@ -1,0 +1,45 @@
+{% extends "templates/web.html" %}
+
+{% block title %}All Flights{% endblock %}
+
+{% block page_content %}
+<div class="container my-5">
+    <h2 class="mb-4">All Airplane Flights</h2>
+
+    {% if flights %}
+    <div class="list-group">
+        {% for flight in flights %}
+        <div class="list-group-item mb-3 p-4 shadow-sm rounded">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 class="mb-2">
+                        {{ flight.source_airport_code }}
+                        &nbsp;→&nbsp;
+                        {{ flight.destination_airport_code }}
+                    </h5>
+                    <p class="mb-1 text-muted">
+                        <strong>Date:</strong> {{ flight.date_of_departure }} &nbsp;|&nbsp;
+                        <strong>Time:</strong> {{ flight.time_of_departure }} &nbsp;|&nbsp;
+                        <strong>Duration:</strong> {{ flight.duration }}
+                    </p>
+                    <span class="badge 
+                        {% if flight.status == 'Scheduled' %}badge-primary
+                        {% elif flight.status == 'Completed' %}badge-success
+                        {% elif flight.status == 'Cancelled' %}badge-danger
+                        {% endif %}">
+                        {{ flight.status }}
+                    </span>
+                </div>
+                <a href="/flights/{{ flight.name }}" class="btn btn-primary btn-sm">
+                    View Flight →
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <p class="text-muted">No flights available at the moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

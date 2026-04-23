@@ -34,6 +34,30 @@ class AirplaneTicket(Document):
 		else:
 			pass
 
+	# def validate(self):
+		
+	# 	tickets = frappe.get_all("Airplane Ticket", fields=["name"])
+
+	# 	# print("All the tickets are ",tickets)
+
+	# 	for ticket in tickets:
+	# 		# print(ticket)
+	# 		doc = frappe.get_doc("Airplane Ticket", ticket.name)
+	# 		# print(doc)
+
+	# 		if doc.seat:
+	# 			continue
+	# 		else:
+
+	# 			letters = random.choice("ABCDE")
+	# 			numbers =str(random.randint(0,99))
+	# 			seat = numbers + letters
+	# 		doc.set("seat", seat)
+
+	# 		# doc.save(ignore_permissions=True)
+
+	# 	frappe.db.commit()
+
 
 
 

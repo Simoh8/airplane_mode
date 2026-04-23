@@ -7,7 +7,11 @@ app_license = "mit"
 
 # Apps
 # ------------------
+# hooks.py
 
+website_route_rules = [
+    {"from_route": "/flights/<name>", "to_route": "flight"},
+]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page

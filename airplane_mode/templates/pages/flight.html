@@ -1,0 +1,67 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ flight.name }}{% endblock %}
+
+{% block page_content %}
+<div class="container my-5">
+    <a href="/flights" class="btn btn-secondary btn-sm mb-4">← Back to All Flights</a>
+
+    <div class="card shadow-sm p-4">
+        <h3 class="mb-3">
+            {{ flight.name }}
+        </h3>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Flight ID</th>
+                    <td>{{ flight.name }}</td>
+                </tr>
+                <tr>
+                    <th>Airplane</th>
+                    <td>{{ flight.airplane }}</td>
+                </tr>
+                <tr>
+                    <th>Source Airport</th>
+                    <td>{{ flight.source_airport }} ({{ flight.source_airport_code }})</td>
+                </tr>
+                <tr>
+                    <th>Destination Airport</th>
+                    <td>{{ flight.destination_airport }} ({{ flight.destination_airport_code }})</td>
+                </tr>
+                <tr>
+                    <th>Date of Departure</th>
+                    <td>{{ flight.date_of_departure }}</td>
+                </tr>
+                <tr>
+                    <th>Time of Departure</th>
+                    <td>{{ flight.time_of_departure }}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{ flight.duration }}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>
+                        <span class="badge 
+                            {% if flight.status == 'Scheduled' %}badge-primary
+                            {% elif flight.status == 'Completed' %}badge-success
+                            {% elif flight.status == 'Cancelled' %}badge-danger
+                            {% endif %}">
+                            {{ flight.status }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Book Flight button — points to web form we'll build next -->
+        <div class="mt-4">
+            <a href="/book-flight?flight={{ flight.name }}" class="btn btn-success btn-lg">
+                Book This Flight
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

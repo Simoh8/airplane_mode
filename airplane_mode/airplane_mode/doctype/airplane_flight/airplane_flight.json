@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_i8ty",
   "airplane",
+  "is_published",
   "column_break_upgo",
   "status",
   "amended_from",
@@ -25,6 +26,7 @@
  ],
  "fields": [
   {
+   "bold": 1,
    "fieldname": "section_break_i8ty",
    "fieldtype": "Section Break",
    "label": "Airplane Flight Details"
@@ -78,6 +80,7 @@
    "reqd": 1
   },
   {
+   "bold": 1,
    "fieldname": "airport_details_section",
    "fieldtype": "Section Break",
    "label": "Airport Details"
@@ -117,6 +120,7 @@
    "reqd": 1
   },
   {
+   "bold": 1,
    "fieldname": "depature_details_section",
    "fieldtype": "Section Break",
    "label": "Depature Details"
@@ -124,6 +128,11 @@
   {
    "fieldname": "column_break_zobd",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_published",
+   "fieldtype": "Select",
+   "label": "publish on website ?"
   }
  ],
  "grid_page_length": 50,
@@ -135,7 +144,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2026-03-27 01:10:56.655837",
+ "modified": "2026-04-24 01:08:40.159015",
  "modified_by": "Administrator",
  "module": "airplane_mode",
  "name": "Airplane Flight",
